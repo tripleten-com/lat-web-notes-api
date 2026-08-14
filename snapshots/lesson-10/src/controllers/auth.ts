@@ -87,7 +87,7 @@ export const login = async (req: Request, res: Response) => {
 export const getProfile = async (req: Request, res: Response) => {
   const userId = req.user?.userId;
 
-  const user = await User.findById(userId).select('-password');
+  const user = await User.findById(userId);
   if (!user) {
     res.status(404).json({
       success: false,
@@ -99,7 +99,9 @@ export const getProfile = async (req: Request, res: Response) => {
 
   res.status(200).json({
     success: true,
-    data: { user },
+    data: {
+      user: { userId: user._id, email: user.email, name: user.name },
+    },
     error: null,
   });
 };
