@@ -18,6 +18,6 @@ export const errorHandler = (
   res.status(500).json({
     success: false,
     data: null,
-    error: { message: err.message || 'Ha ocurrido un error en el servidor' },
+    error: { message: 'Ha ocurrido un error en el servidor' },
   });
 };
