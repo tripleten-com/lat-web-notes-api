@@ -1,5 +1,5 @@
 // La ruta de registro
-// Requiere que el servidor esté corriendo: npm run dev
+// Requiere que el servidor esté en ejecución: npm run dev
 // Ejecutar con: node tests/lesson-05.js
 
 const BASE_URL = 'http://localhost:3000';

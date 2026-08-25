@@ -39,6 +39,7 @@ npm run test:07    # variables de entorno
 npm run test:08    # la ruta de login
 npm run test:09    # el middleware de autenticación
 npm run test:10    # el endpoint de perfil
+npm run test:11    # la autorización de las notas
 ```
 
 Todas necesitan el servidor en ejecución, en otra terminal, salvo `test:03` y `test:07`, que leen los archivos del proyecto directamente. Cuando una prueba pasa por completo, imprime el código de verificación que tienes que ingresar en la lección.
@@ -49,9 +50,9 @@ Así se ve la API cuando termines de implementarla. En el código inicial las ru
 
 | Método | Ruta | Requiere token | Descripción |
 |--------|------|----------------|-------------|
-| `GET` | `/notes` | No | Devuelve todas las notas |
-| `POST` | `/notes` | No | Crea una nota |
-| `DELETE` | `/notes/:id` | Sí | Elimina una nota |
+| `GET` | `/notes` | Sí | Devuelve tus notas |
+| `POST` | `/notes` | Sí | Crea una nota a tu nombre |
+| `DELETE` | `/notes/:id` | Sí | Elimina una nota tuya |
 | `POST` | `/auth/register` | No | Registra un usuario nuevo |
 | `POST` | `/auth/login` | No | Inicia sesión y devuelve un token |
 | `GET` | `/auth/me` | Sí | Devuelve el perfil del usuario actual |
