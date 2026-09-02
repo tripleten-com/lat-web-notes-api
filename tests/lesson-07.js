@@ -54,7 +54,9 @@ test('El archivo .env existe y define MONGO_URI, PORT y JWT_SECRET', () => {
 test('JWT_SECRET es una clave generada, no un texto de ejemplo', () => {
   assert(env.JWT_SECRET, 'falta la variable JWT_SECRET en .env');
   assert(
-    !/super-strong-secret|replace-this|your-|secret-key|dev-secret/i.test(env.JWT_SECRET),
+    !/super-strong-secret|replace-this|your-|secret-key|dev-secret|clave|ejemplo|genera/i.test(
+      env.JWT_SECRET,
+    ),
     'JWT_SECRET todavía tiene un valor de ejemplo: genera uno con crypto.randomBytes',
   );
   assert(
